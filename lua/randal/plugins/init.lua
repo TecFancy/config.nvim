@@ -8,13 +8,9 @@ return {
     end
   },
   -- tmux
-  {
-    "christoomey/vim-tmux-navigator"
-  },
+  "christoomey/vim-tmux-navigator",
   -- maximizes and restores current window
-  {
-    "szw/vim-maximizer"
-  },
+  "szw/vim-maximizer",
   -- essential plugins
   -- {
   --   "tpope/vim-surround"
@@ -66,6 +62,15 @@ return {
         }
       })
     end,
-  }
+  },
+  -- autocompletion
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+
+  -- snippets
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+  "rafamadriz/friendly-snippets"
 }
 
