@@ -47,9 +47,11 @@ return {
     dependencies = {
       -- lua functions that many plugins are
       "nvim-lua/plenary.nvim", -- reqired dependency
-      "BurntSushi/ripgrep", -- suggested dependency
-      "sharkdp/fd", -- optional dependency
-      "nvim-tree/nvim-web-devicons" -- optional dependency
+      "BurntSushi/ripgrep", -- suggested dependency: required for `live_grep` and `grep_string` and is the first priority for find_files
+      "sharkdp/fd", -- optional dependency: finder
+      -- "nvim-treesitter/nvim-treesitter" -- optional dependency: finder/preview
+      -- "neovim LSP" optional dependency: picker
+      "nvim-tree/nvim-web-devicons" -- optional dependency: icons
     },
     config = function()
       require("telescope").setup({
