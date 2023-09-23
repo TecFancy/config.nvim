@@ -71,6 +71,17 @@ return {
   -- snippets
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets"
+  "rafamadriz/friendly-snippets",
+
+  -- managing & installing lsp servers
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+
+  -- configuring lsp server 
+  "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  { "glepnir/lspsaga.nvim", branch = "main" },
+  "jose-elias-alvarez/typescript.nvim",
+  "onsails/lspkind.nvim"
 }
 
