@@ -29,5 +29,9 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 -------- end: general keymaps --------
 
 
--------- 
+-------- start: plugin keymaps --------
+
+-- normal mode keymaps
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- vim-maximizer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- nvim-tree
 
