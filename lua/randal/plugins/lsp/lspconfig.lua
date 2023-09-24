@@ -33,8 +33,8 @@ api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     keymap.set('n', 'gf', "<cmd>Lspsaga finder<CR>", opts)
     keymap.set('n', 'gD', lsp.buf.declaration, opts)
-    -- keymap.set('n', 'gd', lsp.buf.definition, opts)
-    keymap.set('n', 'gd', "<cmd>Lspsaga peek_definition<CR>", opts)
+    keymap.set('n', 'gd', lsp.buf.definition, opts)
+    -- keymap.set('n', 'gd', "<cmd>Lspsaga peek_definition<CR>", opts)
     keymap.set('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opts)
     keymap.set('n', '<leader>o', "<cmd>Lspsaga outline<CR>", opts)
     keymap.set('n', 'gi', lsp.buf.implementation, opts)
