@@ -102,6 +102,24 @@ return {
   "windwp/nvim-ts-autotag",
 
   -- git signs plugin
-  "lewis6991/gitsigns.nvim"
+  "lewis6991/gitsigns.nvim",
+
+  -- debug
+  "puremourning/vimspector"
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   "Pocco81/DAPInstall.nvim",
+  --   "theHamsta/nvim-dap-virtual-text",
+  --   "rcarriga/nvim-dap-ui",
+  --   dependencies = {
+  --     "typescript-language-server/typescript-language-server",
+  --     { "mxsdev/nvim-dap-vscode-js", dependencies = "mfussenegger/nvim-dap" },
+  --     {
+  --       "microsoft/vscode-js-debug",
+  --       opt = true,
+  --       run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  --     }
+  --   }
+  -- }
 }
 
