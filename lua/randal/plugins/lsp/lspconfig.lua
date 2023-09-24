@@ -1,6 +1,6 @@
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
-  return 
+  return
 end
 
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -20,6 +20,7 @@ local lsp = vim.lsp
 local inspect = vim.inspect
 local api = vim.api
 local bo = vim.bo
+local diagnostic = vim.diagnostic
 
 api.nvim_create_autocmd('LspAttach', {
   group = api.nvim_create_augroup('UserLspConfig', {}),
@@ -30,9 +31,12 @@ api.nvim_create_autocmd('LspAttach', {
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { buffer = ev.buf }
+    keymap.set('n', 'gf', "<cmd>Lspsaga finder<CR>", opts)
     keymap.set('n', 'gD', lsp.buf.declaration, opts)
-    keymap.set('n', 'gd', lsp.buf.definition, opts)
-    keymap.set('n', 'K', lsp.buf.hover, opts)
+    -- keymap.set('n', 'gd', lsp.buf.definition, opts)
+    keymap.set('n', 'gd', "<cmd>Lspsaga peek_definition<CR>", opts)
+    keymap.set('n', 'K', "<cmd>Lspsaga hover_doc<CR>", opts)
+    keymap.set('n', '<leader>o', "<cmd>Lspsaga outline<CR>", opts)
     keymap.set('n', 'gi', lsp.buf.implementation, opts)
     keymap.set('n', '<C-k>', lsp.buf.signature_help, opts)
     keymap.set('n', '<leader>wa', lsp.buf.add_workspace_folder, opts)
@@ -47,8 +51,10 @@ api.nvim_create_autocmd('LspAttach', {
     keymap.set('n', '<leader>f', function()
       lsp.buf.format { async = true }
     end, opts)
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+    -- keymap.set('n', '[d', diagnostic.goto_prev)
+    keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+    -- keymap.set('n', ']d', diagnostic.goto_next)
+    keymap.set('n', ']d', "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
   end,
 })
 
@@ -84,40 +90,40 @@ lspconfig["html"].setup({
   -- on_attach = on_attach
 })
 
-lspconfig["css"].setup({
+lspconfig["cssls"].setup({
   capabilities = capabilities,
   -- on_attach = on_attach
 })
 
--- lspconfig["tailwindcss"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach
--- })
+lspconfig["tailwindcss"].setup({
+  capabilities = capabilities,
+  -- on_attach = on_attach
+})
 
 -- lspconfig["volar"].setup({
 --   capabilities = capabilities,
 --   on_attach = on_attach
 -- })
 
--- lspconfig["jsonls"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach
--- })
+lspconfig["jsonls"].setup({
+  capabilities = capabilities,
+  -- on_attach = on_attach
+})
 
--- lspconfig["eslint"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach
--- })
+lspconfig["eslint"].setup({
+  capabilities = capabilities,
+  -- on_attach = on_attach
+})
 
 lspconfig["marksman"].setup({
   capabilities = capabilities,
   -- on_attach = on_attach
 })
 
--- lspconfig["yamlls"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach
--- })
+lspconfig["yamlls"].setup({
+  capabilities = capabilities,
+  -- on_attach = on_attach
+})
 
 lspconfig["lua_ls"].setup({
   capabilities = capabilities,

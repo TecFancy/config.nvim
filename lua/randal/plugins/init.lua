@@ -45,7 +45,7 @@ return {
       "nvim-lua/plenary.nvim", -- reqired dependency
       "BurntSushi/ripgrep", -- suggested dependency: required for `live_grep` and `grep_string` and is the first priority for find_files
       "sharkdp/fd", -- optional dependency: finder
-      -- "nvim-treesitter/nvim-treesitter" -- optional dependency: finder/preview
+      "nvim-treesitter/nvim-treesitter", -- optional dependency: finder/preview
       -- "neovim LSP" optional dependency: picker
       "nvim-tree/nvim-web-devicons" -- optional dependency: icons
     },
@@ -78,9 +78,13 @@ return {
   "williamboman/mason-lspconfig.nvim",
 
   -- configuring lsp server 
-  "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "nvimdev/lspsaga.nvim", branch = "main" }
+  },
   "hrsh7th/cmp-nvim-lsp",
-  { "glepnir/lspsaga.nvim", branch = "main" },
+  -- { "glepnir/lspsaga.nvim", branch = "main" },
+  -- { "nvimdev/lspsaga.nvim", branch = "main" },
   "jose-elias-alvarez/typescript.nvim",
   "onsails/lspkind.nvim"
 }
