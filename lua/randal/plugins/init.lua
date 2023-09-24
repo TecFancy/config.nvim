@@ -99,6 +99,9 @@ return {
 
   -- auto clsing
   "windwp/nvim-autopairs",
-  "windwp/nvim-ts-autotag"
+  "windwp/nvim-ts-autotag",
+
+  -- git signs plugin
+  "lewis6991/gitsigns.nvim"
 }
 
