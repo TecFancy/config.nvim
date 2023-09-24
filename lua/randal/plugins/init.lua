@@ -1,4 +1,7 @@
 return {
+  -- colorscheme
+  "joshdick/onedark.vim",
+
   -- lualine(status line)
   {
     "nvim-lualine/lualine.nvim",
