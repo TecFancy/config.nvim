@@ -36,6 +36,15 @@ return {
       require("nvim-tree").setup ()
     end,
   },
+
+  -- treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    run = function ()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end
+  },
+
   -- fuzzy finding
   {
     "nvim-telescope/telescope.nvim",
@@ -86,6 +95,10 @@ return {
   -- { "glepnir/lspsaga.nvim", branch = "main" },
   -- { "nvimdev/lspsaga.nvim", branch = "main" },
   "jose-elias-alvarez/typescript.nvim",
-  "onsails/lspkind.nvim"
+  "onsails/lspkind.nvim",
+
+  -- auto clsing
+  "windwp/nvim-autopairs",
+  "windwp/nvim-ts-autotag"
 }
 
